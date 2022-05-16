@@ -1,0 +1,21 @@
+this q.s is more like an observation question rater than a coding question. k- place of the symbol and n is the level in the grammar.
+
+ex of the grammar is:
+
+0
+01
+0110
+01101001
+0110100110010110
+
+if u see here- grammar of half of nth level is the same as n-1 th level and after half it is the compliment of n-1 th level
+int mid---  (2^n-1)/2
+so the code goes ----          if(n==1){ 
+                                  return 0;
+                               }
+                               else if(k<=mid){
+                                   grammar(n-1,k);
+                               }
+                               else{
+                                  ~(grammar(n-1,k));
+                               }
