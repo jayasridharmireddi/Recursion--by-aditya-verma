@@ -1,0 +1,27 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		Scanner sc= new Scanner(System.in);
+		String ip= sc.nextLine();
+		System.out.println(ip);
+		String op=" ";
+		allsubset(ip,op);
+	}
+	public static void allsubset(String ip,String op){
+	    if(ip.length()==0){
+	        System.out.println(op);
+	        return;
+	    }
+	    String op1=op;
+	    String op2=op;
+	    op2+=ip.charAt(0);
+	    //op1=op;
+	    ip=ip.substring(1);
+	    allsubset(ip,op2);
+	    allsubset(ip,op1);
+	}
+}
+
+TC-O(2^N);
