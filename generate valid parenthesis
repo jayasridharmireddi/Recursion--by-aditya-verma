@@ -1,0 +1,25 @@
+class Solution {
+    
+    public List<String> generateParenthesis(int n) {
+        List<String> l= new ArrayList<String>();
+        solve(l,0,0,n,"");
+        return l;
+    }
+    public void solve(List<String>l,int open, int close, int n,String s){
+        if(s.length()==2*n){
+            l.add(s);
+            return;
+        }
+        if(open<n){
+            solve(l,open+1,close,n,s+"(");
+        }
+        if(open>close){
+            solve(l,open,close+1,n,s+")");
+        }
+    }
+}
+
+
+
+TC-O(2^N);
+SC-O(2*N)
