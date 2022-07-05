@@ -1,0 +1,25 @@
+import java.util.*;
+public class Main
+{
+    
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		int arr[]= {1,2,3,4,5};
+		int n= arr.length;
+	    f(0,n,arr);
+	    for(int j=0;j<n;j++){
+		 System.out.println(arr[j]);
+	    }
+	}
+	public static void f(int l,int n,int[] arr){
+	    if(l>n/2){
+	        return;
+	    }else{
+	        int t=arr[l];
+	        arr[l]=arr[n-l-1];
+	        arr[n-l-1]=t;
+	        f(l+1,n,arr);
+	    }
+	}
+	
+}
