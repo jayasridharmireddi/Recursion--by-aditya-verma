@@ -1,0 +1,22 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		Scanner sc= new Scanner(System.in);
+		int arr[]={1,2,3};
+		int n=arr.length;
+		List<Integer> li= new ArrayList<>();
+		rec(arr,0,n,li);
+	}
+	public static void rec(int[] arr, int i, int n,List<Integer> li){
+	    if(i>=n){
+	        System.out.println(li);
+	        return;
+	    }
+	    li.add(arr[i]);
+	    rec(arr,i+1,n,li);
+	    li.remove(li.size()-1);
+	    rec(arr,i+1,n,li);
+	}
+}
